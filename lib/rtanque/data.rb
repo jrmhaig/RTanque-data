@@ -43,7 +43,7 @@ module RTanque
 
         @match_data << {
           bots: live_bots.values,
-          explosions: explosions.values,
+          explosions: explosions.deep_dup.values,
           shells: @match.shells.map do |shell|
                     { x: shell.position.x, y: shell.position.y }
                   end
